@@ -1,0 +1,3 @@
+package com.forgegate.controller;
+import org.springframework.jdbc.core.JdbcTemplate; import org.springframework.data.redis.core.StringRedisTemplate; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController public class HealthController { private final JdbcTemplate db; private final StringRedisTemplate redis; public HealthController(JdbcTemplate db,StringRedisTemplate redis){this.db=db;this.redis=redis;} @GetMapping("/api/health") public Map<String,Object> health(){db.queryForObject("SELECT 1",Integer.class);redis.opsForValue().get("forgegate:health");return Map.of("status","ok","service","ForgeGate API");} }
