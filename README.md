@@ -3,6 +3,7 @@
 ![CI](https://github.com/atulchaudhary85/forgegate/actions/workflows/ci.yml/badge.svg)
 
 ![Login](docs/login.png)
+![dashboard](docs/dashboard.png)
 
 ForgeGate is a Spring Boot + React application for time-bound access requests, manager/security approvals, automatic grants and expiry, and append-only audit trails. It is a development baseline; complete the owner steps below before production use.
 
